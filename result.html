@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron mt-5">
+      <h1 class="display-4">Result</h1>
+      <hr class="my-4">
+      <p class="lead">Income after tax is: <span id="afterTaxIncome"></span></p>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Parse the after tax income value from the URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var afterTaxIncome = urlParams.get('afterTaxIncome');
+      
+      // Display the after tax income on the page
+      $('#afterTaxIncome').text('Rs' + afterTaxIncome);
+    });
+  </script>
+</body>
+</html>
